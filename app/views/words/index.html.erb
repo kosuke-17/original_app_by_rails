@@ -1,10 +1,13 @@
 <main class="main">
   <div class="inner">
+    <% if user_signed_in? %>
        <div class="user-page">  
         <%= link_to "ユーザー一覧ページへ", root_path, class: :greeting__link%>
        </div>
+       <%= link_to "#{current_user.name}さんが、ログイン中", "#", class: :greeting__link%>
+    <% end%>
     <div class="card__wrapper">
-      <%# 投稿機能実装後、部分テンプレートでプロトタイプ投稿一覧を表示する %>
+      <%= render partial: 'word', collection: @words %>
     </div>
   </div>
 </main>

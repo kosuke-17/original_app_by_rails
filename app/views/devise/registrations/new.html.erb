@@ -14,7 +14,6 @@
           <%= f.label :name_kana, "なまえ(カナ)" %><br />
           <%= f.text_field :name_kana, id:"user_name_kana" %>
         </div>
-d
         <div class="field">
           <%= f.label :email, "メールアドレス" %><br />
           <%= f.email_field :email, id:"user_email", autofocus: true, autocomplete: "email" %>
@@ -31,15 +30,15 @@ d
         </div>
 
         <div class="weight-bold-text">
-           <%= f.label :job_id, "職業" %><br />
-           <%= f.collection_select(:job_id, Job.all, :id, :name, {}, {class:"select-box", id:"job-status"}) %>
+          <%= f.label :job_id, "職業" %><br />
+          <%= f.collection_select(:job_id, Job.all, :id, :name, {}, {class:"select-box", id:"job-status"}) %>
         </div>
         
 
         <div class="actions">
           <%= f.submit "新規登録", class: :form__btn  %>
         </div>
-        <%= link_to '戻る', root_path, class: :form__btn %>
+          <%= link_to '戻る', root_path, class: :form__btn %>
       <% end %>
     </div>
   </div>

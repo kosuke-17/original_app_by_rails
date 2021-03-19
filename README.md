@@ -33,7 +33,7 @@
 
 | Colum      | Type        | Options     | 
 | ---------- | ----------- | ----------- |
-| comment    | string      | null: false |
+| text       | string      | null: false |
 | user       | references  |             |
 | prototype  | references  |             |
 

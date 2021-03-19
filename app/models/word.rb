@@ -1,13 +1,15 @@
 class Word < ApplicationRecord
-  belongs_to :user
-  #has_one_attached :image
-  #has_many :comments
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to       :genre
+  belongs_to       :user
+  has_one_attached :image
+  has_many         :texts
 
   with_options presence: true do
     validates :name,  presence: true
     validates :note,  presence: true
-    #validates :image
+    validates :image
   end
 
-  validates :genre, numericality: { other_than: 1 }
+  validates :genre_id, numericality: { other_than: 1 }
 end
