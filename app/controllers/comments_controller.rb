@@ -1,7 +1,13 @@
 class CommentsController < ApplicationController
   def create
-    Comment.create(comment_params)
-    redirect_to "/words/#{comment.word.id}"
+    @comment = Comment.new(comment_params)
+    if @comment.save
+      redirect_to word_path(@comment.word)
+    else
+      @word = @comment.word
+      @comments = @word.comments
+      render "words/show"
+    end
   end
 
   private
