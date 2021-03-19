@@ -1,0 +1,46 @@
+<div class="main">
+  <div class="inner">
+    <div class="form__wrapper">
+      <h2 class="page-heading">ユーザー新規登録</h2>
+
+      <%= form_with model: @user, url: user_registration_path, local: true do |f| %>
+
+        <div class="field">
+          <%= f.label :name, "名前" %><br />
+          <%= f.text_field :name, id:"user_name" %>
+        </div> 
+        
+        <div class="field">
+          <%= f.label :name_kana, "なまえ(カナ)" %><br />
+          <%= f.text_field :name_kana, id:"user_name_kana" %>
+        </div>
+d
+        <div class="field">
+          <%= f.label :email, "メールアドレス" %><br />
+          <%= f.email_field :email, id:"user_email", autofocus: true, autocomplete: "email" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :password, "パスワード（6文字以上）" %><br />
+          <%= f.password_field :password, id:"user_password", autocomplete: "new-password" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :password_confirmation, "パスワード再入力" %><br />
+          <%= f.password_field :password_confirmation, id:"user_password_confirmation", autocomplete: "new-password" %>
+        </div>
+
+        <div class="weight-bold-text">
+           <%= f.label :job_id, "職業" %><br />
+           <%= f.collection_select(:job_id, Job.all, :id, :name, {}, {class:"select-box", id:"job-status"}) %>
+        </div>
+        
+
+        <div class="actions">
+          <%= f.submit "新規登録", class: :form__btn  %>
+        </div>
+        <%= link_to '戻る', root_path, class: :form__btn %>
+      <% end %>
+    </div>
+  </div>
+</div>
