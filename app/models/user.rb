@@ -8,7 +8,7 @@ class User < ApplicationRecord
   
   belongs_to :job
   has_many   :words
-  has_many   :texts
+  has_many   :comments
   
   
   validates :name, presence: true

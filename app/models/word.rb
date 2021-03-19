@@ -3,7 +3,7 @@ class Word < ApplicationRecord
   belongs_to       :genre
   belongs_to       :user
   has_one_attached :image
-  has_many         :texts
+  has_many         :comments, dependent: :destroy
 
   with_options presence: true do
     validates :name,  presence: true
