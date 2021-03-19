@@ -7,7 +7,7 @@ class User < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   
   belongs_to :job
-  #has_many :words
+  has_many   :words
   #has_many :comments
   
   
