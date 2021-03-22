@@ -1,10 +1,10 @@
 <div class="card">
   <%= link_to image_tag(word.image, class: :card__img ), word_path(word.id), method: :get %>
   <div class="card__body">
-    <%= link_to word.name, word_path(word.id), class: :card__title%>
+    <%= link_to word.title, word_path(word.id), class: :card__title%>
     <p class="card__summary">
       <%= word.note %>
     </p>
-    <%= link_to "by #{word.user.name}", "/users/#{word.user.id}", class: :card__user %>
+    <%= link_to "by #{word.user.nickname}", "/users/#{word.user_id}", class: :card__user %>
   </div>
 </div>

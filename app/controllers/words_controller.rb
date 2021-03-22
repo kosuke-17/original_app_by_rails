@@ -2,7 +2,7 @@ class WordsController < ApplicationController
   before_action :set_word, only: [:destroy, :update, :edit, :show]
 
   def index
-    @words = Word.all
+    @words = Word.includes(:user).order("created_at DESC")
   end
 
   def new
@@ -39,6 +39,10 @@ class WordsController < ApplicationController
     @comments = @word.comments.includes(:user)
   end
   
+  def search
+    @words = Word.search(params[:keyword])
+  end
+
   private
 
   def word_params

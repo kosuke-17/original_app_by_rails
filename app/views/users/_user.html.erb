@@ -1,0 +1,16 @@
+<table class="table＿total">
+      <tbody>
+       <tr>
+          <th class="table__col1">ニックネーム</th>
+          <td class="table__col2"><%= link_to user.nickname, "/users/#{user.id}" %></td>
+        </tr>
+        <tr>
+          <th class="table__col1">名前</th>
+          <td class="table__col2"><%= link_to user.name, "/users/#{user.id}" %></td>
+        </tr>
+        <tr>
+          <th class="table__col1">職業</th>
+          <td class="table__col2"><%= user.job.name %></td>
+        </tr>
+      </tbody>
+    </table>

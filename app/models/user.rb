@@ -9,10 +9,17 @@ class User < ApplicationRecord
   belongs_to :job
   has_many   :words
   has_many   :comments
+
+  def self.search(search)
+    if search != ""
+      User.where('name LIKE(?)', "%#{search}%")
+    else
+      User.all
+    end
+  end
   
-  
-  validates :name, presence: true
-  validates :name_kana, presence: true
-  validates :password, format: { with: /[a-z\d]{6,}/i, message: '半角英数字混在で入力してください' }
+  validates :nickname, presence: true
+  validates :name, presence: true, format: { with: /\A[ぁ-んァ-ヶ一-龥々]+\z/, message: '全角文字を使用してください' }
+  validates :name_kana, presence: true, format: { with: /\A[ァ-ヶ]+\z/, message: '全角カナ文字を使用してください' }
   validates :job_id, numericality: { other_than: 1 }
 end

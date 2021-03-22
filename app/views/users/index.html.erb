@@ -1,0 +1,26 @@
+<%= form_with(url: search_users_path, local: true, method: :get, class: "search-form") do |form| %>
+  <%= form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input" %>
+  <%= form.submit "検索", class: "search-btn" %>
+<% end %>
+<h1>ユーザー一覧</h1>
+  <% @users.each do |user| %>
+    <%= render partial: "user", locals: { user: user } %>
+  <% end %>
+<footer class="footer">
+  <div class="footer-left">
+    <%= link_to "ホームへ戻る", root_path %>
+  </div>
+  <div class="footer-center-left">
+    <% if user_signed_in? %>
+      <%= link_to "マイページ", "/users/#{current_user.id}" %>
+    <% else %>
+      <%= link_to "ユーザー一覧ページへ", users_path %>
+    <% end %>
+  </div>
+  <div class="footer-center-right">
+    言語化フォーマット
+  </div>
+  <div class="footer-right">
+    <%= link_to "New Post", new_word_path%>
+  </div>
+</footer>
