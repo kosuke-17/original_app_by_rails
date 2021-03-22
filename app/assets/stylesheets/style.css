@@ -52,7 +52,10 @@ a {
   justify-content: space-between;
 }
 .nav__left {
+  padding: 40px;
+  background-color: #87888e;
   font-size: 65px;
+  color: white;
 }
 .nav__btn{
   display: inline-block;

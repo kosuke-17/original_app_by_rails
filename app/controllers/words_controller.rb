@@ -46,7 +46,7 @@ class WordsController < ApplicationController
   private
 
   def word_params
-    params.require(:word).permit(:name,:image,:note,:genre_id).merge(user_id: current_user.id)
+    params.require(:word).permit(:title,:image,:note,:genre_id).merge(user_id: current_user.id)
   end
 end
 
