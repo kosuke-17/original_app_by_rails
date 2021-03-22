@@ -9,44 +9,7 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,700,900&display=swap" rel="stylesheet">
   </head>
-
   <body>
-    <header class="header">
-      <div class="inner">
-        <div class="nav">
-          <div class="nav__left">
-          <%= link_to "Share_App(仮)", root_path %>
-          </div>
-          <% if user_signed_in? %>
-            <div class="nav__right">
-               <%= link_to "ジャンル", root_path, class: :nav__btn %>
-               <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: :nav__btn %>
-               <%= link_to "New Proto", new_word_path, class: :nav__btn %>
-            </div>
-          <% else %>
-            <div class="nav__right">
-              <%= link_to "ジャンル", "#", class: :nav__btn %>
-              <%= link_to "ログイン", new_user_session_path, class: :nav__btn %>
-              <%= link_to "新規登録", new_user_registration_path, class: :nav__btn %>
-            </div>
-          <% end %>
-        </div>
-      </div>
-    </header>
     <%= yield %>
-    <footer class="footer">
-      <div class="footer-left">
-      <%= link_to "ホームへ戻る", root_path %>
-      </div>
-      <div class="footer-center-left">
-      マイページ
-      </div>
-      <div class="footer-center-right">
-      言語化フォーマット
-      </div>
-      <div class="footer-right">
-      Share_App(仮)の使い方
-      </div>
-    </footer>
   </body>
 </html>

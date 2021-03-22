@@ -4,7 +4,7 @@
       <div class="prototype__detail">
           <p class="detail__title">画像名</p>
           <p class="detail__message">
-            <%= @word.name %>
+            <%= @word.titke %>
           </p>
       </div>
       <div class="prototype__image">
@@ -17,7 +17,7 @@
             <%= @word.note %>
           </p>
         </div>
-        <%= link_to @word.user.name, "/users/#{@word.user.id}", class: :prototype__user %>
+        <%= link_to @word.user.nickname, "/users/#{@word.user.id}", class: :prototype__user %>
         <% if user_signed_in? && current_user.id == @word.user_id %>
         <div class="prototype__manage">
           <%= link_to "編集する", edit_word_path(@word.id), method: :get, class: :prototype__btn %>
@@ -26,7 +26,6 @@
         <% end %>
       </div>
       <div class="prototype__comments">
-        <%# ログインしているユーザーには以下のコメント投稿フォームを表示する %>
           <% if user_signed_in? %>
             <%= form_with(model: [@word, @comment],local: true) do |f|%>
               <div class="field">
@@ -38,18 +37,33 @@
               </div>
             <% end %> 
           <% end %>
-        <%# // ログインしているユーザーには上記を表示する %>
         <ul class="comments_lists">
-          <%# 投稿に紐づくコメントを一覧する処理を記述する %>
             <% @comments.each do |comment| %>
               <li class="comments_list">
                 <%= comment.text%>
-                <%= link_to @word.user.name, "/users/#{@word.user_id}", class: :comment_user %>
+                <%= link_to @word.user.nickname, "/users/#{@word.user_id}", class: :comment_user %>
               </li>
             <% end %>
-          <%# // 投稿に紐づくコメントを一覧する処理を記述する %>
         </ul>
       </div>
     </div>
   </div>
 </main>
+<footer class="footer">
+  <div class="footer-left">
+    <%= link_to "ホームへ戻る", root_path %>
+  </div>
+  <div class="footer-center-left">
+    <% if user_signed_in? %>
+      <%= link_to "マイページ", "/users/#{current_user.id}" %>
+    <% else %>
+      <%= link_to "ユーザー一覧ページへ", users_path %>
+    <% end %>
+  </div>
+  <div class="footer-center-right">
+     言語化フォーマット
+  </div>
+  <div class="footer-right">
+      <%= link_to "New Post", new_word_path%>
+  </div>
+</footer>

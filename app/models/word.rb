@@ -5,8 +5,16 @@ class Word < ApplicationRecord
   has_one_attached :image
   has_many         :comments, dependent: :destroy
 
+  def self.search(search)
+    if search != ""
+      Word.where('name LIKE(?)', "%#{search}%")
+    else
+      Word.all
+    end
+  end
+
   with_options presence: true do
-    validates :name,  presence: true
+    validates :title,  presence: true
     validates :note,  presence: true
     validates :image
   end

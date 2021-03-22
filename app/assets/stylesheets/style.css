@@ -37,10 +37,10 @@ a {
 /* ヘッダー */
 
 .header {
-  background-color: rgb(180, 144, 238);
-  margin-bottom: 48px;
-  padding: 20px 0;
-
+  background-image: url('pexels-pixabay-47730.jpg');
+  height: 60vh;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .inner {
   width: 1024px;
@@ -52,7 +52,7 @@ a {
   justify-content: space-between;
 }
 .nav__left {
-  font-size: 36px;
+  font-size: 65px;
 }
 .nav__btn{
   display: inline-block;
@@ -61,7 +61,7 @@ a {
   color: black;
   text-decoration: none;
   user-select: none;
-  border: 1px #87CEFA solid;
+  border: 1px black solid;
   border-radius: 3px;
   transition: 0.4s ease;
 }
@@ -69,6 +69,20 @@ a {
   color: #fff;
   background: #87CEFA;
 }
+.search-form {
+  text-align: center;
+  padding-top: 32px;
+}
+
+.search-form .search-input {
+  width: 30%;
+  margin-right: 10px;
+}
+
+.search-form .search-btn {
+  width: 10%;
+}
+
 
 
 
@@ -112,7 +126,7 @@ a {
 
 .user-page{
   margin-bottom: 20px;
-  border: 1px solid black;
+  text-decoration: none;
   height: 30px;
   width: 180px;
 }
@@ -233,6 +247,11 @@ a {
   min-height: calc(100vh - 161px);
 }
 .table{
+  border-collapse: collapse;
+  margin-bottom: 32px;
+  width: 50%;
+}
+.table＿total{
   border-collapse: collapse;
   margin-bottom: 32px;
   width: 50%;
