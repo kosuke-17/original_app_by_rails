@@ -1,6 +1,6 @@
 class WordsController < ApplicationController
   before_action :set_word, only: [:destroy, :update, :edit, :show]
-
+  before_action :move_to_index, only: [:edit, :update, :destroy]
   def index
     @words = Word.includes(:user).order("created_at DESC")
   end
@@ -48,8 +48,14 @@ class WordsController < ApplicationController
   def word_params
     params.require(:word).permit(:title,:image,:note,:genre_id).merge(user_id: current_user.id)
   end
-end
 
   def set_word
     @word = Word.find(params[:id])
   end
+
+  def move_to_index
+    unless current_user.id == @word.user_id
+      redirect_to action: :index
+    end
+  end
+end
