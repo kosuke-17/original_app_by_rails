@@ -43,6 +43,11 @@
           <%= f.label :job_id, "職業" %><br />
           <%= f.collection_select(:job_id, Job.all, :id, :name, {}, {class:"select-box", id:"job-status"}) %>
         </div>
+
+        <div class="field">
+          <%= f.label :user_image, "アカウントの画像" %><br />
+          <%= f.file_field :user_image, id:"user_image" %>
+        </div>
         
 
         <div class="actions">

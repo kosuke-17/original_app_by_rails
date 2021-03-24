@@ -3,6 +3,7 @@ class WordsController < ApplicationController
 
   def index
     @words = Word.includes(:user).order("created_at DESC")
+
   end
 
   def new
