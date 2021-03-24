@@ -7,28 +7,33 @@
         <% if current_user.id == @user.id %>
         <h2>マイページ</h2>
         <% end %>
-        <table class="table">
-          <tbody>
-            <tr>
-              <th class="table__col1">ニックネーム</th>
-              <td class="table__col2"><%= @user.nickname %></td>
-            </tr>
-            <tr>
-              <th class="table__col1">名前</th>
-              <td class="table__col2"><%= @user.name %></td>
-            </tr>
-            <th class="table__col1">なまえ(カナ)</th>
-              <td class="table__col2"><%= @user.name_kana %></td>
-            <tr>
-              <th class="table__col1">自己紹介</th>
-              <td class="table__col2"><%= @user.profile %></td>
-            </tr>
-            <tr>
-              <th class="table__col1">職業</th>
-              <td class="table__col2"><%= @user.job.name %></td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="user_profile">
+          <table class="table">
+            <tbody>
+              <tr>
+                <th class="table__col1">ニックネーム</th>
+                <td class="table__col2"><%= @user.nickname %></td>
+              </tr>
+              <tr>
+                <th class="table__col1">名前</th>
+                <td class="table__col2"><%= @user.name %></td>
+              </tr>
+              <th class="table__col1">フリガナ</th>
+                <td class="table__col2"><%= @user.name_kana %></td>
+              <tr>
+                <th class="table__col1">自己紹介</th>
+                <td class="table__col2"><%= @user.profile %></td>
+              </tr>
+              <tr>
+                <th class="table__col1">職業</th>
+                <td class="table__col2"><%= @user.job.name %></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="user_image">
+            <%= image_tag @user.user_image%>
+          </div>
+        </div>
         <h2 class="page-heading">
           <%= "#{@user.name}の投稿"%>
         </h2>

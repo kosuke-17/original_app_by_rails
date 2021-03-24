@@ -6,6 +6,11 @@
       <%= form_with model: current_user, local: true do |f|%>
 
         <div class="field">
+          <%= f.label :user_image, "アカウントの画像" %><br />
+          <%= f.file_field :user_image, id:"user_image" %>
+        </div>
+        
+        <div class="field">
           <%= f.label :nickname, "ニックネーム" %><br />
           <%= f.text_field :nickname, id:"user_nickname" %>
         </div> 
