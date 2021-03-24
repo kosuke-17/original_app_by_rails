@@ -5,6 +5,6 @@
     <p class="card__summary">
       <%= word.note %>
     </p>
-    <%= link_to "by #{word.user.nickname}", "/users/#{word.user_id}", class: :card__user %>
+    <%= link_to " #{word.user.nickname}", "/users/#{word.user_id}", class: :card__user %>
   </div>
 </div>

@@ -4,51 +4,54 @@
       <h2 class="page-heading">ユーザー新規登録</h2>
 
       <%= form_with model: @user, url: user_registration_path, local: true do |f| %>
+        <div class="image-separate">
+          <div class="user-image-left">
+            <div class="field">
+              <%= f.label :nickname, "ニックネーム" %><br />
+              <%= f.text_field :nickname, id:"user_nickname" %>
+            </div> 
 
-        <div class="field">
-          <%= f.label :nickname, "ニックネーム" %><br />
-          <%= f.text_field :nickname, id:"user_nickname" %>
-        </div> 
-
-        <div class="field">
-          <%= f.label :name, "名前" %><br />
-          <%= f.text_field :name, id:"user_name" %>
-        </div> 
+            <div class="field">
+              <%= f.label :name, "名前" %><br />
+              <%= f.text_field :name, id:"user_name" %>
+            </div> 
         
-        <div class="field">
-          <%= f.label :name_kana, "フリガナ" %><br />
-          <%= f.text_field :name_kana, id:"user_name_kana" %>
-        </div>
-        <div class="field">
-          <%= f.label :email, "メールアドレス" %><br />
-          <%= f.email_field :email, id:"user_email", autofocus: true, autocomplete: "email" %>
-        </div>
+            <div class="field">
+              <%= f.label :name_kana, "フリガナ" %><br />
+              <%= f.text_field :name_kana, id:"user_name_kana" %>
+            </div>
+            <div class="field">
+              <%= f.label :email, "メールアドレス" %><br />
+              <%= f.email_field :email, id:"user_email", autofocus: true, autocomplete: "email" %>
+            </div>
 
-        <div class="field">
-          <%= f.label :password, "パスワード（6文字以上）" %><br />
-          <%= f.password_field :password, id:"user_password", autocomplete: "new-password" %>
-        </div>
+            <div class="field">
+              <%= f.label :password, "パスワード（6文字以上）" %><br />
+              <%= f.password_field :password, id:"user_password", autocomplete: "new-password" %>
+            </div>
 
-        <div class="field">
-          <%= f.label :password_confirmation, "パスワード再入力" %><br />
-          <%= f.password_field :password_confirmation, id:"user_password_confirmation", autocomplete: "new-password" %>
-        </div>
+            <div class="field">
+              <%= f.label :password_confirmation, "パスワード再入力" %><br />
+              <%= f.password_field :password_confirmation, id:"user_password_confirmation", autocomplete: "new-password" %>
+            </div>
 
-        <div class="field">
-          <%= f.label :profile, "プロフィール" %><br />
-          <%= f.text_area :profile, id:"user_name_kana" %>
-        </div>
+            <div class="field">
+              <%= f.label :profile, "プロフィール" %><br />
+              <%= f.text_area :profile, id:"user_profile" %>
+            </div>
 
-        <div class="weight-bold-text">
-          <%= f.label :job_id, "職業" %><br />
-          <%= f.collection_select(:job_id, Job.all, :id, :name, {}, {class:"select-box", id:"job-status"}) %>
-        </div>
+            <div class="weight-bold-text">
+              <%= f.label :job_id, "職業" %><br />
+              <%= f.collection_select(:job_id, Job.all, :id, :name, {}, {class:"select-box", id:"job-status"}) %>
+            </div>
 
-        <div class="field">
-          <%= f.label :user_image, "アカウントの画像" %><br />
-          <%= f.file_field :user_image, id:"user_image" %>
+            <div class="field">
+              <%= f.label :user_image, "アカウントの画像" %><br />
+              <%= f.file_field :user_image, id:"user_image" %>
+            </div>
+          </div>
+          <div class="user-image-right" id="user-image-list"></div>
         </div>
-        
 
         <div class="actions">
           <%= f.submit "新規登録", class: :form__btn  %>

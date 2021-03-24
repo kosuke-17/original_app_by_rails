@@ -1,6 +1,6 @@
-if (document.URL.match( /new/ ) || document.URL.match( /edit/)) {
+if (document.URL.match( /users/ ) || document.URL.match( /edit/)) {
   document.addEventListener('DOMContentLoaded', function(){
-    const ImageList = document.getElementById('image-list');
+    const ImageList = document.getElementById('user-image-list');
 
     const createImageHTML = (blob) => {
       const imageElement = document.createElement('div');
@@ -10,7 +10,7 @@ if (document.URL.match( /new/ ) || document.URL.match( /edit/)) {
       ImageList.appendChild(imageElement);
     };
 
-    document.getElementById('word_image').addEventListener('change', function(e){
+    document.getElementById('user_image').addEventListener('change', function(e){
       const imageContent = document.querySelector('img');
       if (imageContent){
         imageContent.remove();

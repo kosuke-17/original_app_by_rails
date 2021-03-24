@@ -55,9 +55,9 @@ a {
   font-size: 60px;
   padding: 10px 24px;
   color: #fff;
-  text-decoration: none;
   background: linear-gradient(45deg, #607d8b, #b0bec5);
-  border-radius: 4px;
+  border-radius: 6px;
+
 }
 .nav__btn{
   display: inline-block;
@@ -96,6 +96,10 @@ a {
   min-height: calc(100vh - 161px);
 }
 
+.image-separate {
+  display: flex;
+  justify-content: space-between;
+}
 .form__text {
   width: 50%;
 }
@@ -188,14 +192,25 @@ a {
 .card__img {
   margin-bottom: 16px;
 }
-.card__title {
+
+.word__title {
   display: block;
   font-size: 20px;
   margin-bottom: 8px;
+  text-align: center;
   font-weight: bold;
+  background-color: #ffcc80;
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.4);
 }
 .card__summary {
   font-size: 16px;
+}
+.user_mini {
+  text-align: right;
+  width: 2em;
+  height: 2em;
+  cursor: pointer;
+  border-radius: 50%;
 }
 .card__user {
   display: block;
@@ -232,9 +247,10 @@ a {
   flex-direction: column;
   margin-bottom: 8px;
 }
-.detail__title{
-  font-size: 20px;
-  font-weight: bold;
+.title__message {
+  font-size: 24px;
+  background-color: #ffcc80;
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.4);
 }
 .prototype__manage{
   display: flex;
@@ -335,35 +351,21 @@ a {
 }
 /* フッター */
 
-.footer {
-  display: flex;
+footer {
+  position: fixed;
+	bottom: 0;
+	display: flex;
   text-align: center;
+	width: 100%;
+	background-color: lightgray;
 }
-.footer-left {
+.page_link {
+  
   Width: 25%;
   padding: 20px 0;
   border: 1px solid black;
 }
-.footer-center-left {
-  Width: 25%;
-  padding: 20px 0;
-  border: 1px solid black;
-}
-.footer-center-right {
-  Width: 25%;
-  padding: 20px 0;
-  border: 1px solid black;
-}
-.footer-right {
-  Width: 25%;
-  padding: 20px 0;
-  border: 1px solid black;
-}
-.copyright {
-  text-align: center;
-  color: #fff;
-  font-size: 10px;
-}
+
 
 /* タブレット対応 */
 @media (max-width: 1024px) {
