@@ -3,3 +3,17 @@
     <%= render partial: "word", locals: { word: word } %>
   <% end %>
   </div>
+<footer>
+  <%= link_to "ホームへ戻る", root_path, class: :page_link %>
+  <div class="page_link">
+    <% if user_signed_in? %>
+      <%= link_to "マイページ", "/users/#{current_user.id}" %>
+    <% else %>
+      <%= link_to "ユーザー一覧ページへ", users_path %>
+    <% end %>
+  </div>
+  <div class="page_link">
+     言語化フォーマット
+  </div>
+  <%= link_to "New Post", new_word_path, class: :page_link %>
+</footer>

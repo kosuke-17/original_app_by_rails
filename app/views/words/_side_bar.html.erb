@@ -17,10 +17,8 @@
 
   <h6>~ジャンル検索~</h6>
   <%= search_form_for @p, url: genre_search_words_path do |f| %>
-    <%= f.label :genre_id_eq, 'ジャンル：' %>
-    <%= f.collection_select :genre_id_eq, Genre.all, :id, :name, include_blank: '指定なし' %>
-    <br>
-  <%= f.submit '検索' %>
+    <%= f.collection_select :genre_id_eq, Genre.all, :id, :name %>
+    <%= f.submit '検索' %>
 <% end %>
   </div>
 </div>
