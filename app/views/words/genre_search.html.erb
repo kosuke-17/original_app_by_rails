@@ -1,0 +1,5 @@
+  <div class="card__wrapper">
+  <% @words.each do |word| %>
+    <%= render partial: "word", locals: { word: word } %>
+  <% end %>
+  </div>

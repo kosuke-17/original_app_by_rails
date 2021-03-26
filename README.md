@@ -4,10 +4,12 @@
 
 | Colum                 | Type    | Options                   |
 | --------------------- | ------- | ------------------------- |
+| nickname              | string  | null: false               |
 | name                  | string  | null: false               |
 | name_kana             | string  | null: false               |
 | email                 | string  | null: false, unique: true |
 | encrypted_password    | string  | null: false               |
+| profile               | text    | null: false               |
 | job_id                | integer | null: false               |
 
 ### Association
@@ -19,7 +21,7 @@
 
 | colum       | Type                | Options           |
 | ----------- | ------------------- | ----------------- |
-| name        | string              | null: false       |
+| title       | string              | null: false       |
 | note        | text                | null: false       |
 | genre       | integer             | null: false       |
 | user        | references          | foreign_key: true |
