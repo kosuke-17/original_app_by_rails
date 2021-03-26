@@ -31,7 +31,8 @@ class UsersController < ApplicationController
     params.require(:user).permit(:nickname, :name, :name_kana, :profile, :job_id, :user_image)
   end
 
-  def move_to_index
+  def move_to_root
+    @user = User.find(params[:id])
     unless current_user.id == @user.id
       redirect_to root_path
     end
