@@ -4,7 +4,7 @@
         <h2 class="page-heading">
           <%= "#{@user.name} プロフィール"%>
         </h2>
-        <% if current_user.id == @user.id %>
+        <% if user_signed_in? && current_user.id == @user.id %>
           <h2>マイページ</h2>
         <% end %>
         <div class="user_profile">
@@ -37,7 +37,7 @@
         <h2 class="page-heading">
           <%= "#{@user.name}の投稿"%>
         </h2>
-         <div class="user__card">
+         <div class="card__wrapper">
           <%= render partial: '/words/word', collection: @words %>
         </div>
     </div>
@@ -46,15 +46,21 @@
 <footer>
   <%= link_to "ホームへ戻る", root_path, class: :page_link %>
   <div class="page_link">
-    <% if user_signed_in? && current_user.id == @user.id %>
+  <%# if文使いすぎ%>
+    <% if user_signed_in? %>
+      <% if current_user.id == @user.id %>
+        <%= link_to "ユーザー一覧ページへ", users_path %>
+      <% else %>
+        <%= link_to "マイページ", "/users/#{current_user.id}" %>
+      <% end %>
+    <% else%>
       <%= link_to "ユーザー一覧ページへ", users_path %>
-    <% else %>
-      <%= link_to "マイページ", "/users/#{current_user.id}" %>
     <% end %>
+  <%# %>
   </div>
   <div class="page_link">
     <% if user_signed_in? && current_user.id == @user.id %>
-      <%= link_to "アカウントを編集する", edit_user_path(current_user), class: :page_link %>
+      <%= link_to "アカウントを編集する", edit_user_path(current_user)%>
     <% else %>
       言語化フォーマット
     <% end %>

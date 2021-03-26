@@ -1,5 +1,6 @@
 class WordsController < ApplicationController
-  before_action :set_word, only: [:destroy, :update, :edit, :show]
+  before_action :set_word, only: [:destroy, :edit, :update, :show]
+  before_action :search_product, only: [:index, :genre_search]
   before_action :move_to_index, only: [:edit, :update, :destroy]
   def index
     @words = Word.includes(:user).order("created_at DESC")
@@ -43,10 +44,18 @@ class WordsController < ApplicationController
     @words = Word.search(params[:keyword])
   end
 
+  def genre_search
+    @words = @p.result
+  end
+
   private
 
   def word_params
     params.require(:word).permit(:title,:image,:note,:genre_id).merge(user_id: current_user.id)
+  end
+
+  def search_product
+    @p = Word.ransack(params[:q])
   end
 
   def set_word
@@ -58,4 +67,5 @@ class WordsController < ApplicationController
       redirect_to action: :index
     end
   end
+
 end

@@ -1,0 +1,26 @@
+<div class="side-bar-header">
+  <div class="user-bar">
+  <% if user_signed_in? %>
+    <%= link_to "現在、ログイン中", "/users/#{current_user.id}", class: :sign__btn %>
+    <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: :sign__btn %>
+  <% else %>
+    <%= link_to "新規登録", new_user_registration_path, class: :sign__btn %>
+  <% end %>
+    <%= link_to "ユーザー一覧ページへ", users_path, class: :sign__btn %>
+  </div>
+  <div class="search-bar">
+  <h6>~フリーワード検索~</h6>
+  <%= form_with(url: search_words_path, local: true, method: :get, class: "search-form") do |form| %>
+    <%= form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input" %>
+    <%= form.submit "検索", class: "search-btn" %>
+  <% end %>
+
+  <h6>~ジャンル検索~</h6>
+  <%= search_form_for @p, url: genre_search_words_path do |f| %>
+    <%= f.label :genre_id_eq, 'ジャンル：' %>
+    <%= f.collection_select :genre_id_eq, Genre.all, :id, :name, include_blank: '指定なし' %>
+    <br>
+  <%= f.submit '検索' %>
+<% end %>
+  </div>
+</div>
