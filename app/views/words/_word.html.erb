@@ -1,10 +1,13 @@
-<div class="card">
-  <%= link_to image_tag(word.image, class: :card__img ), word_path(word.id), method: :get %>
-  <div class="card__body">
-    <%= link_to word.title, word_path(word.id), class: :card__title%>
-    <p class="card__summary">
-      <%= word.note %>
-    </p>
-    <%= link_to " #{word.user.nickname}", "/users/#{word.user_id}", class: :card__user %>
+<div class="word">
+  <div class="word-user">
+    <%= link_to " #{word.user.nickname}", "/users/#{word.user_id}", class: :word__user %>
+    <div class="word__time">
+      <%= word.created_at.strftime('%-d日%-H時%-M分') %>
+    </div>
   </div>
+  <%= link_to image_tag(word.image, class: :word__img ), word_path(word.id), method: :get %>
+  <%= link_to word.title, word_path(word.id), class: :word__title%>
+  <p class="word__summary">
+    <%= word.note %>
+  </p>
 </div>

@@ -1,9 +1,7 @@
-<header class="header">
+<header>
   <div class="inner">
     <div class="nav">
-      <div class="nav__left">
-        FootBall × Visualizasion
-      </div>
+      FootBall × Visualizasion
     </div>
   </div>
 </div>
@@ -16,19 +14,11 @@
     <%= render "main_bar"%>
   </div>
 </main>
-<footer>
-  <%= link_to "ホームへ戻る", root_path, class: :page_link %>
+<div class="home_icon">
+  <a href="/words/new"><i class="fa fa-home fa-6x"></i></a>
+</div>
   <% if user_signed_in? %>
-    <%= link_to "マイページ", "/users/#{current_user.id}", class: :page_link %>
-  <% else %>
-    <%= link_to "ユーザー一覧ページへ", users_path, class: :page_link %>
-  <% end %>
-  <div class="page_link">
-    言語化フォーマット
+  <div class="new_icon">
+    <a href="/words/new"><i class="fas fa-camera fa-6x"></i></a>
   </div>
-  <% if user_signed_in? %>
-  <%= link_to "投稿", new_word_path, class: :page_link%>
-  <% else %>
-  <%= link_to "ログイン", new_user_session_path, class: :page_link %>
   <% end %>
-</footer>
