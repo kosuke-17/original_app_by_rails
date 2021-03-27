@@ -11,7 +11,6 @@
       </div>
       <div class="prototype__body">
         <div class="prototype__detail">
-          <p class="detail__title">言語化フォーマット</p>
           <p class="note__message">
             <%= @word.note %>
           </p>
@@ -25,24 +24,24 @@
         <% end %>
       </div>
       <div class="prototype__comments">
-          <% if user_signed_in? %>
-            <%= form_with(model: [@word, @comment],local: true) do |f|%>
-              <div class="field">
-                <%= f.label :text, "コメント" %><br />
-                <%= f.text_field :text, id:"comment_text" %>
-              </div>
-              <div class="actions">
-                <%= f.submit "送信する", class: :form__btn  %>
-              </div>
-            <% end %> 
-          <% end %>
+        <% if user_signed_in? %>
+          <%= form_with(model: [@word, @comment],local: true) do |f|%>
+            <div class="field">
+              <%= f.label :text, "コメント" %><br />
+              <%= f.text_field :text, id:"comment_text" %>
+            </div>
+            <div class="actions">
+              <%= f.submit "送信する", class: :form__btn  %>
+            </div>
+          <% end %> 
+        <% end %>
         <ul class="comments_lists">
-            <% @comments.each do |comment| %>
-              <li class="comments_list">
-                <%= comment.text%>
-                <%= link_to @word.user.nickname, "/users/#{@word.user_id}", class: :comment_user %>
-              </li>
-            <% end %>
+          <% @comments.each do |comment| %>
+            <li class="comments_list">
+              <%= comment.text%>
+              <%= link_to @word.user.nickname, "/users/#{@word.user_id}", class: :comment_user %>
+            </li>
+          <% end %>
         </ul>
       </div>
     </div>

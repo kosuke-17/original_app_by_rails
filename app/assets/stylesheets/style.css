@@ -36,28 +36,21 @@ a {
 
 /* ヘッダー */
 
-.header {
+header {
+  /*画像の表示領域が狭くなると空白できる*/
   background-image: url('pexels-pixabay-47730.jpg');
   height: 70vh;
+  width: 100%;
   background-repeat: no-repeat;
   background-size: cover;
 }
-.inner {
-  width: 1024px;
-  margin: 0 auto;
-}
+
 .nav {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-}
-.nav__left {
   font-size: 60px;
   padding: 10px 24px;
   color: #fff;
   background: linear-gradient(45deg, #607d8b, #b0bec5);
-  border-radius: 6px;
-
+  border-radius: 8px;
 }
 
 
@@ -103,20 +96,40 @@ a {
 
 /* メイン */
 
+main {
+  display: flex;
+}
+.main-bar {
+  width: 100vw;
+  background-color: #e6f0f0;
+}
 
-.card__wrapper {
+.word__wrapper {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  min-height: calc(100vh - 161px);
 }
-.card {
-  width: calc((100% - 50px) / 3);
+.word {
+  width: 400px;;
   margin-bottom: 40px;
+  margin: 20px 120px;
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.4);
 }
-.card__img {
-  margin-bottom: 16px;
+
+.word__user {
+  font-size: 16px;
+  color: #432c02;
+}
+
+.word__user:hover {
+  color: #999;
+}
+
+.word__time {
+  font-size: 12px;
+  color: #999;
+  text-align: right;
 }
 
 .word__title {
@@ -125,11 +138,15 @@ a {
   margin-bottom: 8px;
   text-align: center;
   font-weight: bold;
-  background-color: #ffcc80;
+  background-color: #009b9f;
+  border: 1px solid gray;
   box-shadow: 0 3px 4px rgba(0, 0, 0, 0.4);
 }
-.card__summary {
+.word__summary {
   font-size: 16px;
+  padding: 20px 5px;
+  background-color: white;
+  border: 10px solid #e6f0f0;
 }
 .user_mini {
   text-align: right;
@@ -138,43 +155,26 @@ a {
   cursor: pointer;
   border-radius: 50%;
 }
-.card__user {
-  display: block;
-  font-size: 12px;
-  color: #999;
-  text-align: right;
-  text-decoration: underline;
-}
-main {
-  display: flex;
-}
-.main-bar {
-  background-color: lightgray;
-  width: 100vw;
-}
+
   /* サイドバー */
 
 .side-bar {
   background-color: #009b9f;
   width: 300px;
-  height: 100vh;
-}
-
-.side-bar-header {
-  height: 100px;
-  padding: 0;
   align-items: center;
 }
-
+.user-bar {
+  text-align: center
+}
 .sign__btn{
   display: inline-block;
   padding: 1em 1.6em;
   font-size: 1em;
-  color: lightgray;
+  color: white;
   text-decoration: none;
+  width: 100%;
 }
 .sign__btn:hover{
-  width: 100%;
   color: #fff;
   background: #87CEFA;
 }
@@ -348,7 +348,28 @@ footer {
   padding: 10px 0;
   border: 1.5px solid gray;
 }
+.home_icon {
+  position: fixed;
+	bottom: 15px;
+  left: 15px;
+}
 
+.home_icon:hover {
+  opacity: 0.6;
+}
+
+.new_icon {
+  padding: 30px;
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  background-color: teal;
+  border-radius: 50%;
+}
+
+.new_icon:hover {
+  opacity: 0.6;
+}
 
 /* タブレット対応 */
 @media (max-width: 1024px) {

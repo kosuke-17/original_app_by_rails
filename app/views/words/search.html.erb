@@ -23,7 +23,7 @@
     <%= form.submit "検索", class: "search-btn" %>
   <% end %>
 </header>
-<div class="card__wrapper">
+<div class="word__wrapper">
   <% @words.each do |word| %>
     <%= render partial: "word", locals: { word: word } %>
   <% end %>

@@ -1,15 +1,15 @@
 <div class="inner">
-    <div class="card__wrapper">
-    <% if @words.present?%>
-      <%= render partial: 'word', collection: @words %>
-    <% else%>
-      <div class="card">
-        <%= image_tag "https://tech-master.s3.amazonaws.com/uploads/curriculums/images/Rails1-4/sample.jpg", class: "item-img" %>
-        <div class="card__body">
-          <%= link_to "タイトル", class: :card__title%>
-          <p class="card__summary">言語化フォーマット</p>
-        </div>
+  <div class="word__wrapper">
+  <% if @words.present?%>
+    <%= render partial: 'word', collection: @words %>
+  <% else%>
+    <div class="word">
+      <%= image_tag "https://tech-master.s3.amazonaws.com/uploads/curriculums/images/Rails1-4/sample.jpg", class: "item-img" %>
+      <div class="word__body">
+        <%= link_to "タイトル", class: :word__title%>
+        <p class="word__summary">言語化フォーマット</p>
       </div>
-    <% end %>
     </div>
+  <% end %>
   </div>
+</div>
