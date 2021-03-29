@@ -203,27 +203,36 @@ main {
 
 
 /* 詳細ページ */
-.prototype__wrapper{
-  min-height: calc(100vh - 161px);
+.show__bar {
+  background-color: #e6f0f0;
+  width: 100vw;
 }
-.prototype__hedding{
-  font-size: 24px;
-  font-weight: bold;
+
+.show__user {
+  margin: 2em;
   text-align: center;
 }
-.prototype__user{
-  display: block;
-  font-size: 16px;
-  color: #999;
-  text-align: center;
-  text-decoration: underline;
+
+.word_show_user{ 
+  font-size: 18px;
+  color: black;
 }
-.prototype__image{
+
+.word_show_user:hover {
+  color: #999
+}
+
+.show__wrapper {
+  margin-top: 4em;
+  padding-top: 1.4em;
+}
+
+.word__image{
   width: 40%;
   margin: 0 auto;
   padding: 16px 0;
 }
-.prototype__detail{
+.tittle__detail{
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -231,39 +240,31 @@ main {
 }
 .title__message {
   font-size: 24px;
-  background-color: #ffcc80;
+  background-color: #00b5ad;
   box-shadow: 0 3px 4px rgba(0, 0, 0, 0.4);
 }
-.prototype__manage{
-  display: flex;
-  justify-content: center;
-  padding-top: 16px;
+.note__content {
+  padding: 30px 30%;
+  background-color: #e6f0f0;
 }
-.prototype__btn{
-  display: block;
-  padding: 0.4em 1.6em;
-  font-size: 0.4em;
-  color: #999;
-  text-decoration: none;
-  user-select: none;
-  border: 1px #999 solid;
-  border-radius: 3px;
-  transition: 0.4s ease;
-  margin: 0 4px;
+.note__detail {
+  padding: 0.4em;
+  background-color: white;
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.4);
 }
-.prototype__btn:hover{
-  color: #fff;
-  background: #999;
+.comments__content {
+  padding: 20px;
 }
-
-.prototype__comments{
+.word__comments{
   background-color: #f6f6f6;
   padding: 20px;
-  margin: 28px 0 40px 0;
+  margin: 50px 0 40px 0;
 }
 
 .comments_lists{
+  padding-top: 20px;
   padding-left: 20px;
+  font-size: 20px;
 }
 
 .comments_list{
@@ -272,7 +273,7 @@ main {
 }
 
 .comment_user{
-  font-size: 16px;
+  font-size: 14px;
   color: #999;
   text-decoration: underline;
 }
@@ -350,8 +351,12 @@ footer {
 }
 .home_icon {
   position: fixed;
-	bottom: 15px;
-  left: 15px;
+	bottom: 25px;
+  left: 20px;
+  padding: 20px;
+  background-color: teal;
+  border-radius: 50%;
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.4);
 }
 
 .home_icon:hover {
@@ -361,13 +366,37 @@ footer {
 .new_icon {
   padding: 30px;
   position: fixed;
-  bottom: 15px;
-  right: 15px;
+  bottom: 25px;
+  right: 20px;
   background-color: teal;
   border-radius: 50%;
 }
-
 .new_icon:hover {
+  opacity: 0.6;
+}
+
+/* フッター(詳細ページ追加) */
+.edit_icon {
+  padding: 20px;
+  position: fixed;
+  bottom: 180px;
+  right: 110px;
+  background-color: teal;
+  border-radius: 50%;
+}
+.edit_icon:hover {
+  opacity: 0.6;
+}
+
+.delete_icon {
+  padding: 20px;
+  position: fixed;
+  bottom: 180px;
+  right: 20px;
+  background-color: teal;
+  border-radius: 50%;
+}
+.delete_icon:hover {
   opacity: 0.6;
 }
 
