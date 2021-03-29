@@ -1,63 +1,74 @@
-<main class="main">
-  <div class="inner">
-    <div class="prototype__wrapper">
-      <div class="prototype__detail">
-          <p class="title__message">
-            <%= @word.title %>
-          </p>
+
+<main>
+  <div class="side-bar">
+    <div class="user-bar">
+    <% if user_signed_in? %>
+      <h4>~現在、ログイン中~</h4>
+      <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: :sign__btn %>
+      <%= link_to "マイページ", "/users/#{current_user.id}", class: :sign__btn %>
+    <% else %>
+      <%= link_to "新規登録", new_user_registration_path, class: :sign__btn %>
+      <%= link_to "ログイン", new_user_session_path, class: :sign__btn %>
+    <% end %>
+      <%= link_to "ユーザー一覧ページへ", users_path, class: :sign__btn %>
+    </div>
+    言語化フォーマット
+  </div>
+  <div class="show__bar">   <%#表示領域(高さ)が低くなると空白生まれる %>
+    <div class="show__wrapper">
+      <div class="show__user">
+        <%= link_to @word.user.nickname, "/users/#{@word.user.id}", class: :word_show_user %>
       </div>
-      <div class="prototype__image">
+      <div class="word__image">
         <%= image_tag @word.image %>
       </div>
-      <div class="prototype__body">
-        <div class="prototype__detail">
+      <div class="tittle__detail">
+        <p class="title__message">
+          <%= @word.title %>
+        </p>
+      </div>
+      <div class="note__content">
+        <div class="note__detail">
           <p class="note__message">
             <%= @word.note %>
           </p>
         </div>
-        <%= link_to @word.user.nickname, "/users/#{@word.user.id}", class: :prototype__user %>
-        <% if user_signed_in? && current_user.id == @word.user_id %>
-        <div class="prototype__manage">
-          <%= link_to "編集する", edit_word_path(@word.id), method: :get, class: :prototype__btn %>
-          <%= link_to "削除する", word_path(@word.id), method: :delete, class: :prototype__btn %>
-        </div>
-        <% end %>
       </div>
-      <div class="prototype__comments">
-        <% if user_signed_in? %>
-          <%= form_with(model: [@word, @comment],local: true) do |f|%>
-            <div class="field">
+      <div class="comments__content">
+        <div class="word__comments">
+          <% if user_signed_in? %>
+            <%= form_with(model: [@word, @comment],local: true) do |f|%>
               <%= f.label :text, "コメント" %><br />
               <%= f.text_field :text, id:"comment_text" %>
-            </div>
-            <div class="actions">
-              <%= f.submit "送信する", class: :form__btn  %>
-            </div>
-          <% end %> 
-        <% end %>
-        <ul class="comments_lists">
-          <% @comments.each do |comment| %>
-            <li class="comments_list">
-              <%= comment.text%>
-              <%= link_to @word.user.nickname, "/users/#{@word.user_id}", class: :comment_user %>
-            </li>
+              <%= f.submit "送信"%>
+            <% end %> 
           <% end %>
-        </ul>
+          <ul class="comments_lists">
+            <% @comments.each do |comment| %>
+              <li class="comments_list">
+                <%= comment.text%>
+                <%= link_to @word.user.nickname, "/users/#{@word.user_id}", class: :comment_user %>
+              </li>
+            <% end %>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
 </main>
-<footer>
-  <%= link_to "ホームへ戻る", root_path, class: :page_link %>
-  <div class="page_link">
-    <% if user_signed_in? %>
-      <%= link_to "マイページ", "/users/#{current_user.id}" %>
-    <% else %>
-      <%= link_to "ユーザー一覧ページへ", users_path %>
-    <% end %>
+<div class="home_icon">
+  <a href="/words"><i class="fa fa-home fa-6x"></i></a>
+</div>
+<% if user_signed_in? %>
+  <% if current_user.id == @word.user_id %>
+  <div class="edit_icon">
+    <a href="/words/<%=@word.id%>/edit" data-method="get"><i class="fas fa-pencil-alt fa-2x"></i></a>
   </div>
-  <div class="page_link">
-     言語化フォーマット
+  <div class="delete_icon">
+    <a rel="nofollow" href="/words/<%=@word.id%>" data-method="delete"><i class="fas fa-bomb fa-2x"></i></a>
   </div>
-  <%= link_to "New Post", new_word_path, class: :page_link %>
-</footer>
+  <% end %>
+  <div class="new_icon">
+    <a href="/words/new"><i class="fas fa-camera fa-6x"></i></a>
+  </div>
+  <% end %>
