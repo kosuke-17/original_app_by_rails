@@ -13,8 +13,9 @@
       <%= link_to "ユーザー一覧ページへ", users_path, class: :sign__btn %>
     </div>
     言語化フォーマット
-  </div>
-  <div class="show__bar">   <%#表示領域(高さ)が低くなると空白生まれる %>
+  </div><%# 検索フォーマットなし%>
+  <div class="show__bar">
+    <div class="show__content">
     <div class="show__wrapper">
       <div class="show__user">
         <%= link_to @word.user.nickname, "/users/#{@word.user.id}", class: :word_show_user %>
@@ -53,6 +54,7 @@
           </ul>
         </div>
       </div>
+    </div>
     </div>
   </div>
 </main>

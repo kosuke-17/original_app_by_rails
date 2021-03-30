@@ -3,32 +3,26 @@
   <div class="image-separate">
     <div class="image-left">
       <div class="field">
-        <%= f.label :image, "アウトプット画像" %><br />
-        <%= f.file_field :image, id:"prototype_image" %>
+        <%= f.label :image, "~画像~" %><br />
+        <%= f.file_field :image, id:"word_image" %>
       </div>
 
-      <div class="field">
-        <%= f.label :title, "タイトル" %><br />
-        <%= f.text_field :title, id:"prototype_title" %>
-      </div>
-
-      <div class="field">
-        <%= f.label :note, "アウトプット" %><br />
-        <%= f.text_area :note, placeholder: "プレーを言語化しよう", class: :form__text, id:"prototype_catch_copy" %>
-      </div>
-
-      <div class="field">
-        <%= f.label :genre_id, "ジャンル" %><br />
+      <div class="field"> 
+        <%= f.label :genre_id, "関連ジャンル" %><br />
         <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"select-box", id:"genre-status"}) %>
       </div>
+
+      <div class="word_title">
+        <%= f.text_field :title, placeholder: "~タイトル~" , id:"word_title" , class: :form__title %>
+      </div>
+
+      <div class="op_note">
+        <%= f.text_area :note, placeholder: "プレーを言語化しよう", class: :form__text, id:"word_note" %>
+      </div>
     </div>
-    <div class="image-right" id="image-list"></div>
+    <div class="image-right">
+      <div class="image-right" id="image-list"></div>
+    </div>
   </div>
-
-
-
-  <div class="actions">
-    <%= f.submit "編集する", class: :form__btn  %>
-  </div>
-  <%= link_to '戻る', word_path(word.id), class: :form__btn %>
+  <%= f.submit "編集", class: :new_post  %>
 <% end %>
