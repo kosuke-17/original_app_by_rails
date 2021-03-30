@@ -12,7 +12,7 @@ class Word < ApplicationRecord
       #コードが繰り返してるので良い方法を探す
     else
       Word.all
-    end
+    end #該当しない場合を記述
   end
 
   with_options presence: true do

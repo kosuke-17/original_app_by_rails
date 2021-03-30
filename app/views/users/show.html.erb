@@ -1,6 +1,8 @@
-<div class="main">
-  <div class="inner">
-    <div class="user__wrapper">
+<main>
+  <div class="side-bar">
+    <%= render "words/side_bar"%>
+  </div>
+  <div class="user__wrapper">
         <h2 class="page-heading">
           <%= "#{@user.name} プロフィール"%>
         </h2>
@@ -8,31 +10,22 @@
           <h2>マイページ</h2>
         <% end %>
         <div class="user_profile">
-          <table class="table">
-            <tbody>
-              <tr>
-                <th class="table__col1">ニックネーム</th>
-                <td class="table__col2"><%= @user.nickname %></td>
-              </tr>
-              <tr>
-                <th class="table__col1">名前</th>
-                <td class="table__col2"><%= @user.name %></td>
-              </tr>
-              <th class="table__col1">フリガナ</th>
-                <td class="table__col2"><%= @user.name_kana %></td>
-              <tr>
-                <th class="table__col1">自己紹介</th>
-                <td class="table__col2"><%= @user.profile %></td>
-              </tr>
-              <tr>
-                <th class="table__col1">職業</th>
-                <td class="table__col2"><%= @user.job.name %></td>
-              </tr>
-            </tbody>
-          </table>
-          <div class="user_image">
-            <%= image_tag @user.user_image.variant(resize: '500x500')%>
+        <div class="user_one">
+            <%= image_tag @user.user_image, class: :user_image %>
           </div>
+          <div class="user_content">
+            ニックネーム
+            <%= @user.nickname %><br>
+            名前
+            <%= @user.name %><br>
+            フリガナ
+            <%= @user.name_kana %><br>
+            自己紹介
+            <%= @user.profile %><br>
+            職業
+            <%= @user.job.name %><br>
+          </div>
+          
         </div>
         <h2 class="page-heading">
           <%= "#{@user.name}の投稿"%>
@@ -41,29 +34,17 @@
           <%= render partial: '/words/word', collection: @words %>
         </div>
     </div>
-  </div>
+</main>
+<div class="home_icon">
+  <a href="/words"><i class="fa fa-home fa-6x"></i></a>
 </div>
-<footer>
-  <%= link_to "ホームへ戻る", root_path, class: :page_link %>
-  <div class="page_link">
-  <%# if文使いすぎ%>
-    <% if user_signed_in? %>
-      <% if current_user.id == @user.id %>
-        <%= link_to "ユーザー一覧ページへ", users_path %>
-      <% else %>
-        <%= link_to "マイページ", "/users/#{current_user.id}" %>
-      <% end %>
-    <% else%>
-      <%= link_to "ユーザー一覧ページへ", users_path %>
-    <% end %>
-  <%# %>
+<% if user_signed_in? %>
+  <% if current_user.id == @user.id %>
+  <div class="user_edit_icon">
+    <a href="/words/<%=@user.id%>/edit" data-method="get"><i class="fas fa-user-edit fa-2x"></i></a>
   </div>
-  <div class="page_link">
-    <% if user_signed_in? && current_user.id == @user.id %>
-      <%= link_to "アカウントを編集する", edit_user_path(current_user)%>
-    <% else %>
-      言語化フォーマット
-    <% end %>
+  <% end %>
+  <div class="new_icon">
+    <a href="/words/new"><i class="fas fa-camera fa-6x"></i></a>
   </div>
-  <%= link_to "New Post", new_word_path, class: :page_link %>
-</footer>
+<% end %>

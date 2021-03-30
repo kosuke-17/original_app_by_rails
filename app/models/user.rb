@@ -16,7 +16,7 @@ class User < ApplicationRecord
       User.where('nickname LIKE(?)', "%#{search}%")
     else
       User.all
-    end
+    end  #該当しない場合を記述
   end
   
   validates :nickname, presence: true

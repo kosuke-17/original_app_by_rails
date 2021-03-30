@@ -1,22 +1,17 @@
-<%= form_with(url: search_users_path, local: true, method: :get, class: "search-form") do |form| %>
-  <%= form.text_field :keyword, placeholder: "名前を検索する", class: "search-input" %>
-  <%= form.submit "検索", class: "search-btn" %>
+<main> <%# 幅いっぱいになったら改行できるようにする%>
+  <div class="side-bar">
+    <%= render "words/side_bar"%>
+  </div>
+  <div class="user-bar">
+  <h1 class="user-header">ユーザー一覧</h1>
+      <%= render partial: "user", locals: { user: @user } %>
+  </div>
+</main>
+<div class="home_icon">
+  <a href="/words"><i class="fa fa-home fa-6x"></i></a>
+</div>
+<% if user_signed_in? %>
+  <div class="new_icon">
+    <a href="/words/new"><i class="fas fa-camera fa-6x"></i></a>
+  </div>
 <% end %>
-<h1>ユーザー一覧</h1>
-  <% @users.each do |user| %>
-    <%= render partial: "user", locals: { user: user } %>
-  <% end %>
-<footer>
-    <%= link_to "ホームへ戻る", root_path, class: :page_link %>
-  <div class="page_link">
-    <% if user_signed_in? %>
-      <%= link_to "マイページ", "/users/#{current_user.id}" %>
-    <% else %>
-      <%= link_to "ユーザー一覧ページへ", users_path %>
-    <% end %>
-  </div>
-  <div class="page_link">
-    言語化フォーマット
-  </div>
-    <%= link_to "New Post", new_word_path, class: :page_link %>
-</footer>
