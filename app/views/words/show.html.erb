@@ -1,7 +1,6 @@
 
 <main>
   <div class="side-bar">
-    <div class="user-bar">
     <% if user_signed_in? %>
       <h4>~現在、ログイン中~</h4>
       <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: :sign__btn %>
@@ -11,9 +10,8 @@
       <%= link_to "ログイン", new_user_session_path, class: :sign__btn %>
     <% end %>
       <%= link_to "ユーザー一覧ページへ", users_path, class: :sign__btn %>
-    </div>
     言語化フォーマット
-  </div><%# 検索フォーマットなし%>
+  </div>
   <div class="show__bar">
     <div class="show__content">
     <div class="show__wrapper">

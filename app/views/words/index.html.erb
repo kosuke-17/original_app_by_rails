@@ -7,6 +7,14 @@
 <main>
   <div class="side-bar">
     <%= render "side_bar"%>
+    <div class="side-genre"><%# エラー解消してside_barに記載したい%>
+      <h3>~ジャンル検索~</h3>
+      <%= search_form_for @p, url: genre_search_words_path do |f| %>
+        <%= f.collection_select :genre_id_eq, Genre.all, :id, :name %>
+        <%= f.submit '検索' %>
+      <% end %>
+    </div>
+    言語化フォーマット
   </div>
   <div class="main-bar">
     <%= render "main_bar"%>

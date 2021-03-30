@@ -1,44 +1,20 @@
 <main>
-<div class="side-bar">
-  <div class="user-bar">
-  <% if user_signed_in? %>
-      <h3>~現在、ログイン中~</h3>
-    <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: :sign__btn %>
-    <%= link_to "マイページ", "/users/#{current_user.id}", class: :sign__btn %>
-  <% else %>
-    <%= link_to "新規登録", new_user_registration_path, class: :sign__btn %>
-    <%= link_to "ログイン", new_user_session_path, class: :sign__btn %>
-  <% end %>
-    <%= link_to "ユーザー一覧ページへ", users_path, class: :sign__btn %>
+  <div class="side-bar">
+    <%= render "side_bar"%>
   </div>
   <div class="search-bar">
-  <h3>~投稿検索~</h3>
-  <%= form_with(url: search_words_path, local: true, method: :get, class: "search-form") do |form| %>
-    <%= form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input" %>
-    <%= form.submit "検索", class: "search-btn" %>
-  <% end %>
-<%# ジャンル検索フォーマットなし(エラーでてしまう)%>
-  <h3>~ユーザー検索~</h3>
-  <%= form_with(url: search_users_path, local: true, method: :get, class: "search-form") do |form| %>
-  <%= form.text_field :keyword, placeholder: "名前を検索する", class: "search-input" %>
-  <%= form.submit "検索", class: "search-btn" %>
-<% end %>
-  言語化フォーマット
-</div>
-</div>
-<div class="genre_search-bar">
-<div class="word__wrapper">
-  <% @words.each do |word| %>
-    <%= render partial: "word", locals: { word: word } %>
-  <% end %>
-</div>
-</div>
+    <div class="word__wrapper">
+      <% @words.each do |word| %>
+        <%= render partial: "word", locals: { word: word } %>
+      <% end %>
+    </div>
+  </div>
 </main>
 <div class="home_icon">
   <a href="/words"><i class="fa fa-home fa-6x"></i></a>
 </div>
-  <% if user_signed_in? %>
+<% if user_signed_in? %>
   <div class="new_icon">
     <a href="/words/new"><i class="fas fa-camera fa-6x"></i></a>
   </div>
-  <% end %>
+<% end %>

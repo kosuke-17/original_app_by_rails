@@ -1,16 +1,11 @@
-<table class="table＿total">
-      <tbody>
-       <tr>
-          <th class="table__col1">ニックネーム</th>
-          <td class="table__col2"><%= link_to user.nickname, "/users/#{user.id}" %></td>
-        </tr>
-        <tr>
-          <th class="table__col1">名前</th>
-          <td class="table__col2"><%= link_to user.name, "/users/#{user.id}" %></td>
-        </tr>
-        <tr>
-          <th class="table__col1">職業</th>
-          <td class="table__col2"><%= user.job.name %></td>
-        </tr>
-      </tbody>
-    </table>
+<div class="user-total">
+  <% @users.each do |user| %>
+    <div class="user-contents">
+      <div class="user-one">
+        <%= image_tag user.user_image, class: :user_image %>
+      </div>
+        <%= user.job.name %><br>
+        <%= link_to user.nickname, "/users/#{user.id}" %><br>
+    </div>
+  <% end %>
+</div>
