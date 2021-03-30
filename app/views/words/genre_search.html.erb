@@ -2,10 +2,12 @@
   <div class="side-bar">
     <%= render "side_bar"%>
   </div>
-  <div class="word__wrapper">
-  <% @words.each do |word| %>
-    <%= render partial: "word", locals: { word: word } %>
-  <% end %>
+  <div class="genre_search-bar">
+    <div class="word__wrapper">
+      <% @words.each do |word| %>
+        <%= render partial: "word", locals: { word: word } %>
+      <% end %>
+    </div>
   </div>
 </main>
 <div class="home_icon">

@@ -3,31 +3,28 @@
   <div class="image-separate">
     <div class="image-left">
       <div class="field">
-        <%= f.label :image, "アウトプット画像" %><br />
+      <i class="far fa-image fa-2x"></i>
+        <%= f.label :image, "~画像~" %><br />
+        
         <%= f.file_field :image, id:"word_image" %>
       </div>
 
       <div class="field">
-        <%= f.label :title, "タイトル" %><br />
-        <%= f.text_field :title, id:"word_title" %>
-      </div>
-
-      <div class="field">
-        <%= f.label :note, "アウトプット" %><br />
-        <%= f.text_area :note, placeholder: "プレーを言語化しよう",class: :form__text, id:"word_note" %>
-      </div>
-
-      <div class="field">
-        <%= f.label :genre_id, "ジャンル" %><br />
+        <%= f.label :genre_id, "~関連ジャンル~" %><br />
         <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"select-box", id:"genre-status"}) %>
       </div>
+
+      <div class="word_title">
+        <%= f.text_field :title, placeholder: "~タイトル~", id:"word_title", class: :form__title %>
+      </div>
+
+      <div class="op_note">
+        <%= f.text_area :note, placeholder: "プレーを言語化しよう", class: :form__text, id:"word_note" %>
+      </div>
     </div>
-    <div class="image-right" id="image-list"></div>
+    <div class="image-right">
+      <div class="image-content" id="image-list"></div>
+    </div>
   </div>
-
-  <div class="actions">
-    <%= f.submit "新規投稿する", class: :form__btn  %>
-  </div>
-
-  <%= link_to '戻る', root_path, class: :form__btn %>
+  <%= f.submit "投稿", class: :new_post %>
 <% end %>
