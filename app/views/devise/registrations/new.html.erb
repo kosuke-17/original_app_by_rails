@@ -2,6 +2,7 @@
       <h2 class="field_label">ユーザー新規登録</h2>
 
       <%= form_with model: @user, url: user_registration_path, local: true do |f| %>
+        <%= render 'shared/error_messages', model: f.object %>
         <div class="image-separate">
           <div class="user-image-left">
             <div class="field">
