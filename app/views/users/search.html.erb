@@ -3,7 +3,13 @@
     <%= render "words/side_bar"%>
   </div>
   <div class="search-bar">
-    <%= render partial: "user", locals: { user: @users } %>
+    <% if @users.length !=0 %>
+      <%= render partial: "user", locals: { user: @users } %>
+    <% else %>
+      <div class="search-none">
+        <p>該当するニックネームは<br>存在しません</p>
+      </div>
+    <% end %>
   </div>
 </main>
 <div class="home_icon">

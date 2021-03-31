@@ -12,12 +12,12 @@ class Word < ApplicationRecord
       #コードが繰り返してるので良い方法を探す
     else
       Word.all
-    end #該当しない場合を記述
+    end
   end
 
   with_options presence: true do
-    validates :title,  presence: true
-    validates :note,  presence: true
+    validates :title
+    validates :note
     validates :image
   end
 
