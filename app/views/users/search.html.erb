@@ -3,11 +3,7 @@
     <%= render "words/side_bar"%>
   </div>
   <div class="search-bar">
-    <div class="contents row">
-      <% @users.each do |user| %>
-        <%= render partial: "user", locals: { user: user } %>
-      <% end %>
-      </div>
+    <%= render partial: "user", locals: { user: @users } %>
   </div>
 </main>
 <div class="home_icon">

@@ -1,9 +1,9 @@
-<main> <%# 幅いっぱいになったら改行できるようにする%>
+<main>
   <div class="side-bar">
     <%= render "words/side_bar"%>
   </div>
   <div class="user-bar">
-  <h1 class="user-header">ユーザー一覧</h1>
+    <h1 class="field_label">ユーザー一覧</h1>
       <%= render partial: "user", locals: { user: @user } %>
   </div>
 </main>

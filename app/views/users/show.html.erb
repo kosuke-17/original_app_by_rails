@@ -3,37 +3,43 @@
     <%= render "words/side_bar"%>
   </div>
   <div class="user__wrapper">
-        <h2 class="page-heading">
-          <%= "#{@user.name} プロフィール"%>
-        </h2>
-        <% if user_signed_in? && current_user.id == @user.id %>
-          <h2>マイページ</h2>
-        <% end %>
-        <div class="user_profile">
-        <div class="user_one">
-            <%= image_tag @user.user_image, class: :user_image %>
+    <h2 class="field_label"><%= "#{@user.name} プロフィール"%></h2>
+    <div class="user_profile">
+      <div class="user_one">
+        <%= image_tag @user.user_image, class: :user_image %>
+      </div>
+      <div class="profile_content">
+        <div class="text_content">
+          <p>~ニックネーム~</p>
+          <div class="user__content">
+            <%= @user.nickname %>
           </div>
-          <div class="user_content">
-            ニックネーム
-            <%= @user.nickname %><br>
-            名前
-            <%= @user.name %><br>
-            フリガナ
-            <%= @user.name_kana %><br>
-            自己紹介
-            <%= @user.profile %><br>
-            職業
-            <%= @user.job.name %><br>
+          <p>~名前~</p>
+          <div class="user__content">
+            <%= @user.name %>
           </div>
-          
+          <p>~職業~</p>
+          <div class="user__content">
+            <%= @user.job.name %>
+          </div>
         </div>
-        <h2 class="page-heading">
-          <%= "#{@user.name}の投稿"%>
-        </h2>
-         <div class="word__wrapper">
-          <%= render partial: '/words/word', collection: @words %>
-        </div>
+        
+      <div>
+      <div class="text_content">
+          <p>~自己紹介~</p>
+          <div class="user__content">
+            <%= @user.profile %>
+          </div>
+      </div>
     </div>
+    <h2 class="field_label"><%= "投稿"%></h2>
+    <div class="user_post">
+      
+        <%= render partial: '/words/word', collection: @words %>
+      
+    </div>
+  </div>
+    
 </main>
 <div class="home_icon">
   <a href="/words"><i class="fa fa-home fa-6x"></i></a>
@@ -41,7 +47,7 @@
 <% if user_signed_in? %>
   <% if current_user.id == @user.id %>
   <div class="user_edit_icon">
-    <a href="/words/<%=@user.id%>/edit" data-method="get"><i class="fas fa-user-edit fa-2x"></i></a>
+    <a href="/users/<%=@user.id%>/edit" data-method="get"><i class="fas fa-user-edit fa-2x"></i></a>
   </div>
   <% end %>
   <div class="new_icon">

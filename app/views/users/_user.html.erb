@@ -4,8 +4,10 @@
       <div class="user-one">
         <%= image_tag user.user_image, class: :user_image %>
       </div>
+      <div class="user-two">
         <%= user.job.name %><br>
         <%= link_to user.nickname, "/users/#{user.id}" %><br>
+      </div>
     </div>
   <% end %>
 </div>
