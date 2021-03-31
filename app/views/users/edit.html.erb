@@ -1,48 +1,46 @@
-<div class="main">
-  <div class="inner">
-    <div class="form__wrapper">
-      <h2 class="page-heading">アカウントの編集</h2>
+
+<div class="form__wrapper">
+      <h2 class="field_label">アカウントの編集</h2>
 
       <%= form_with model: current_user, local: true do |f|%>
         <div class="image-separate">
           <div class="user-image-left">
-        <div class="field">
-          <%= f.label :nickname, "ニックネーム" %><br />
-          <%= f.text_field :nickname, id:"user_nickname" %>
-        </div> 
+          <div class="field">
+            <%= f.label :nickname, "~ニックネーム~" %><br />
+            <%= f.text_field :nickname, id:"user_nickname" %>
+          </div> 
 
-        <div class="field">
-          <%= f.label :name, "名前" %><br />
-          <%= f.text_field :name, id:"user_name" %>
-        </div> 
+          <div class="field">
+            <%= f.label :name, "~名前~" %><br />
+            <%= f.text_field :name, id:"user_name" %>
+          </div> 
         
-        <div class="field">
-          <%= f.label :name_kana, "フリガナ" %><br />
-          <%= f.text_field :name_kana, id:"user_name_kana" %>
-        </div>
+          <div class="field">
+            <%= f.label :name_kana, "~フリガナ~" %><br />
+            <%= f.text_field :name_kana, id:"user_name_kana" %>
+          </div>
 
-        <div class="field">
-          <%= f.label :profile, "プロフィール" %><br />
-          <%= f.text_area :profile, id:"user_name_kana" %>
-        </div>
+          <div class="user-profile">
+            <%= f.label :profile, "~プロフィール~" %><br />
+            <%= f.text_area :profile, id:"user_name_kana", class: :form__text %>
+          </div>
 
-        <div class="weight-bold-text">
-          <%= f.label :job_id, "職業" %><br />
-          <%= f.collection_select(:job_id, Job.all, :id, :name, {}, {class:"select-box", id:"job-status"}) %>
-        </div>
-        <div class="field">
-          <%= f.label :user_image, "アカウントの画像" %><br />
-          <%= f.file_field :user_image, id:"user_image" %>
-        </div>
+          <div class="field">
+            <%= f.label :job_id, "~職業~" %><br />
+            <%= f.collection_select(:job_id, Job.all, :id, :name, {}, {class:"select-box", id:"job-status"}) %>
+          </div>
+          <div class="field">
+            <i class="far fa-image fa-2x"></i>
+            <%= f.label :user_image, "~アカウントの画像~" %><br />
+            <%= f.file_field :user_image, id:"user_image" %>
+          </div>
         </div>
         <div class="user-image-right" id="user-image-list"></div>
         </div>
 
-        <div class="actions">
-          <%= f.submit "編集", class: :form__btn  %>
-        </div>
-          <%= link_to '戻る', root_path, class: :form__btn %>
+          <%= f.submit "編集", class: :new_post  %>
       <% end %>
     </div>
-  </div>
+<div class="home_icon">
+  <a href="/words"><i class="fa fa-home fa-5x"></i></a>
 </div>
