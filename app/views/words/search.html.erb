@@ -5,7 +5,7 @@
   <div class="search-bar">
     <div class="word__wrapper">
       <% if @words.length !=0 %>
-        <% @words.each do |word| %>
+        <% @words.each do |word| %>  <%# collectionオプションを使用して繰り返し表示するようにする。%>
           <%= render partial: "word", locals: { word: word } %>
         <% end%>
       <% else %>
