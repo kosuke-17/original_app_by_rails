@@ -16,6 +16,10 @@ RSpec.describe User, type: :model do
         @user.password_confirmation = '000aaa'
         expect(@user).to be_valid
       end
+      it 'profileが空でも保存できる' do
+        @user.profile = ''
+        expect(@user).to be_valid
+      end
     end
 
     context '新規登録できないとき' do
@@ -39,12 +43,12 @@ RSpec.describe User, type: :model do
         @user.valid?
         expect(@user.errors.full_messages).to include("Email can't be blank")
       end
-      it 'passwordが空では登録できないこと' do
+      it 'passwordが空では登録できない' do
         @user.password = ''
         @user.valid?
         expect(@user.errors.full_messages).to include("Password can't be blank")
       end
-      it 'job_idが1では保存できないこと' do
+      it 'job_idが1では保存できない' do
         @user.job_id = 1
         @user.valid?
         expect(@user.errors.full_messages).to include("Job must be other than 1")
