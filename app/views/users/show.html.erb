@@ -6,7 +6,9 @@
     <h2 class="field_label"><%= "#{@user.name} プロフィール"%></h2>
     <div class="user_profile">
       <div class="user_one">
-        <%= image_tag @user.user_image, class: :user_image %>
+        <% if @user.user_image.present?%>
+          <%= image_tag @user.user_image, class: :user_image %>
+        <% end %>
       </div>
       <div class="profile_content">
         <div class="text_content">

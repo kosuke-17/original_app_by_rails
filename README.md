@@ -37,7 +37,7 @@
 | ---------- | ----------- | ----------- |
 | text       | string      | null: false |
 | user       | references  |             |
-| prototype  | references  |             |
+| word       | references  |             |
 
 ### Association
 
