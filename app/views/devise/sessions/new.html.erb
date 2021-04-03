@@ -2,6 +2,12 @@
 <div class="form__wrapper">
   <h2 class="field_label">ユーザーログイン</h2>
   <%= form_with model: @user, url: new_user_session_path, local: true do |f| %>
+    <div class='error-alert'>
+      <div class='error-message'>
+        <%= flash[:notice] %>
+        <%= flash[:alert] %>
+      </div>
+    </div>
 
     <div class="user-login">
       <div class="field">

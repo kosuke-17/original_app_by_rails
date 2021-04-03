@@ -4,7 +4,7 @@
   </div>
   <div class="search-bar">
     <div class="word__wrapper">
-      <% @words.each do |word| %>
+      <% @words.each do |word| %>　<%# collectionオプションを使用して繰り返し表示するようにする。%>
         <%= render partial: "word", locals: { word: word } %>
       <% end %>
     </div>
@@ -13,8 +13,8 @@
 <div class="home_icon">
   <a href="/words"><i class="fa fa-home fa-6x"></i></a>
 </div>
-  <% if user_signed_in? %>
+<% if user_signed_in? %>
   <div class="new_icon">
     <a href="/words/new"><i class="fas fa-camera fa-6x"></i></a>
   </div>
-  <% end %>
+<% end %>

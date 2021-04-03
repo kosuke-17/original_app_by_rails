@@ -4,8 +4,14 @@
   </div>
   <div class="search-bar">
     <div class="word__wrapper">
-      <% @words.each do |word| %>
-        <%= render partial: "word", locals: { word: word } %>
+      <% if @words.length !=0 %>
+        <% @words.each do |word| %>  <%# collectionオプションを使用して繰り返し表示するようにする。%>
+          <%= render partial: "word", locals: { word: word } %>
+        <% end%>
+      <% else %>
+        <div class="search-none">
+        <p>該当する投稿は<br>ありません</p>
+        </div>
       <% end %>
     </div>
   </div>

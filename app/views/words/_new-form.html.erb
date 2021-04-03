@@ -1,5 +1,7 @@
 <%= form_with model: word, local: true do |f|%>
 
+<%= render 'shared/error_messages', model: f.object %>
+
   <div class="image-separate">
     <div class="image-left">
       <div class="field">
@@ -9,7 +11,7 @@
       </div>
       <div class="field">
         <%= f.label :genre_id, "~関連ジャンル~" %><br />
-        <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"select-box", id:"genre-status"}) %>
+        <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"select-box", id:"word_genre_id"}) %>
       </div>
       <div class="word_title">
         <%= f.text_field :title, placeholder: "~タイトル~", id:"word_title", class: :form__title %>
