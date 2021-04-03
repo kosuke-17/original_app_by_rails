@@ -7,11 +7,11 @@
       <div class="field">
         <%= f.label :image, "~画像~" %><br />
         <%= f.file_field :image, id:"word_image" %>
-      </div>
+      </div><%# 保存されている画像をできれば表示できるようにする%>
 
       <div class="field"> 
         <%= f.label :genre_id, "関連ジャンル" %><br />
-        <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"select-box", id:"genre-status"}) %>
+        <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"select-box", id:"word_genre_id"}) %>
       </div>
 
       <div class="word_title">

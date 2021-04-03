@@ -61,10 +61,12 @@
 <% if user_signed_in? %>
   <% if current_user.id == @word.user_id %>
   <div class="edit_icon">
-    <a href="/words/<%=@word.id%>/edit" data-method="get"><i class="fas fa-pencil-alt fa-2x"></i></a>
+  <%# 編集と削除の文字列いらない(記述しておかないとテストコードでリンク選択がうまくいかない) %>
+  <%# 文字列だけ隠せればいいかも%>
+    <a href="/words/<%=@word.id%>/edit" data-method="get" name="edit_icon"><i class="fas fa-pencil-alt fa-2x">編集</i></a>
   </div>
   <div class="delete_icon">
-    <a rel="nofollow" href="/words/<%=@word.id%>" data-method="delete"><i class="fas fa-bomb fa-2x"></i></a>
+    <a rel="nofollow" href="/words/<%=@word.id%>" data-method="delete" name="delete_icon"><i class="fas fa-bomb fa-2x">削除</i></a>
   </div>
   <% end %>
   <div class="new_icon">
