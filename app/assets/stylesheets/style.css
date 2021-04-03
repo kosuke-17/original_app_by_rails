@@ -38,10 +38,12 @@ a {
 /* ヘッダー */
 
 header {
-  /*画像の表示領域が狭くなると空白できる*/
+  /*画像の表示領域が狭くなると空白できる(メディアクエリ対応のため)*/
   background-image: url('pexels-pixabay-47730.jpg');
   height: 70vh;
-  width: 100%;
+  width: 100vw;
+  background-color: #e6f0f0;
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -111,6 +113,7 @@ main {
   padding: 20px 5px;
   background-color: white;
   border: 10px solid #e6f0f0;
+  word-wrap: break-word;
 }
 .user_mini {
   text-align: right;
@@ -124,8 +127,9 @@ main {
 .side-bar {
   padding-top: 20px;
   background-color: #009b9f;
-  width: 300px;
-  align-items: center;
+  width: 20%;
+  min-width: 220px;
+  text-align: center;
 }
 .signed-bar {
   text-align: center;
@@ -308,6 +312,7 @@ main {
 .note__detail {
   padding: 0.4em;
   background-color: white;
+  word-wrap: break-word;
   box-shadow: 0 3px 4px rgba(0, 0, 0, 0.4);
 }
 .comments__content {
@@ -384,6 +389,7 @@ main {
 } 
 
 
+
 /* ユーザー詳細ページ */
 
 .user__wrapper {
@@ -418,15 +424,49 @@ main {
   padding: 0.5em 1em;
   margin: 1em 0;
   width: 300px;
+
+/* ユーザー詳細ページ */
+.user_main {
+  display: flex;
+}
+.user__wrapper {
+  height: 100vh;
+  width: 100vw;
+  background-color: #e6f0f0;
+  overflow: scroll;
+}
+.user_profile {
+  padding: 15px;
+  min-width: 530px;
+  margin-left: 15em;
+  border: 2px solid lightgray;
+  box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.33);
+}
+.user_center {
+  width:50%;
+}
+.user_image {
+  width: 15em;
+  height: 15em;
+  border: 1px solid black;
+}
+
+.text_content {
+  margin-top: 10px;
+  padding: 0.5em 1em;
+  width: 500px;
+
   background: #f4f4f4;
   border-left: solid 6px #5bb7ae;
   box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.33);
 }
 
 .user_content p {
+
   font-size: px;
   color: gray;
   padding-top: 5px;
+
 }
 .user__content {
   font-size: 20px;
@@ -468,8 +508,8 @@ footer {
 .new_icon {
   padding: 30px;
   position: fixed;
-  bottom: 25px;
-  right: 20px;
+  bottom: 20px;
+  right: 30px;
   background-color: #009b9f;
   border: 1px solid black;
   border-radius: 50%;
@@ -497,10 +537,10 @@ footer {
 }
 /* フッター(投稿詳細ページ追加) */
 .edit_icon {
-  padding: 20px;
+  padding: 10px;
   position: fixed;
   bottom: 180px;
-  right: 110px;
+  right: 150px;
   background-color: #009b9f;
   border: 1px solid black;
   border-radius: 50%;
@@ -511,10 +551,10 @@ footer {
 }
 
 .delete_icon {
-  padding: 20px;
+  padding: 10px;
   position: fixed;
   bottom: 180px;
-  right: 20px;
+  right: 30px;
   background-color: #009b9f;
   border: 1px solid black;
   border-radius: 50%;
@@ -526,10 +566,10 @@ footer {
 
 /* フッター(ユーザー詳細ページ追加) */
 .user_edit_icon {
-  padding: 18px;
+  padding:10px;
   position: fixed;
-  bottom: 190px;
-  right: 65px;
+  bottom: 180px;
+  right: 30px;
   background-color: #009b9f;
   border: 1px solid black;
   border-radius: 50%;
