@@ -22,12 +22,12 @@
 
           <div class="user-profile">
             <%= f.label :profile, "~プロフィール~" %><br />
-            <%= f.text_area :profile, id:"user_name_kana", class: :form__text %>
+            <%= f.text_area :profile, id:"user_profile", class: :form__text %>
           </div>
 
           <div class="field">
             <%= f.label :job_id, "~職業~" %><br />
-            <%= f.collection_select(:job_id, Job.all, :id, :name, {}, {class:"select-box", id:"job-status"}) %>
+            <%= f.collection_select(:job_id, Job.all, :id, :name, {}, {class:"select-box", id:"user_job_id"}) %>
           </div>
           <div class="field">
             <i class="far fa-image fa-2x"></i>
