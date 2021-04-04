@@ -3,21 +3,6 @@
     <%= render "words/side_bar"%>
   </div>
   <div class="user__wrapper">
-
-    <h2 class="field_label"><%= "#{@user.name} プロフィール"%></h2>
-    <div class="user_profile">
-      <div class="user_one">
-        <% if @user.user_image.present?%>
-          <%= image_tag @user.user_image, class: :user_image %>
-        <% end %>
-      </div>
-      <div class="profile_content">
-        <div class="text_content">
-          <p>~ニックネーム~</p>
-          <div class="user__content">
-            <%= @user.nickname %>
-          </div>
-
     <h2 class="field_label"><%= "#{@user.name} プロフィール"%></h2>
     <div class= "user_center">
       <div class="user_profile">
@@ -46,40 +31,13 @@
                 <%= @user.profile %>
               </div>
             </div>
-
-          <p>~名前~</p>
-          <div class="user__content">
-            <%= @user.name %>
-          </div>
-          <p>~職業~</p>
-          <div class="user__content">
-            <%= @user.job.name %>
           </div>
         </div>
-
-        <%# プロフィール修正が必要%>
-      <div>
-      <div class="text_content">
-          <p>~自己紹介~</p>
-          <div class="user__content">
-            <%= @user.profile %>
-          </div>
       </div>
-    </div>
-    <h2 class="field_label"><%= "投稿"%></h2>
-    <div class="user_post">
-      
+      <h2 class="field_label">投稿</h2>
+      <div class="word__wrapper">
         <%= render partial: '/words/word', collection: @words %>
-      
-    </div>
-  </div>
-    
-</main>
       </div>
-    </div>
-    <h2 class="field_label">投稿</h2>
-    <div class="word__wrapper">
-        <%= render partial: '/words/word', collection: @words %>
     </div>
   </div>
 </div>
