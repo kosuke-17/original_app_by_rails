@@ -49,11 +49,13 @@ header {
 }
 
 .nav {
-  font-size: 60px;
+  font-size: 50px;
   padding: 10px 24px;
   color: #fff;
+  text-align: center;
   background: linear-gradient(45deg, #009b9f, #9be0a7);
   border-radius: 8px;
+  opacity: 0.9;
 }
 
 /* メイン */
@@ -408,6 +410,7 @@ main {
   width: 15em;
   height: 15em;
   border: 1px solid black;
+  border-radius: 50%;
 }
 
 .text_content {
