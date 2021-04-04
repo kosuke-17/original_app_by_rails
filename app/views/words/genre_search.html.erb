@@ -4,9 +4,7 @@
   </div>
   <div class="search-bar">
     <div class="word__wrapper">
-      <% @words.each do |word| %>　<%# collectionオプションを使用して繰り返し表示するようにする。%>
-        <%= render partial: "word", locals: { word: word } %>
-      <% end %>
+      <%= render partial: "word", collection: @words %>
     </div>
   </div>
 </main>
