@@ -59,50 +59,50 @@
 ## 1トップ画面
 |ログイン前|ログイン後|
 |---|---|
-![before_sign_in](https://user-images.githubusercontent.com/79294818/113509879-d66a8100-9592-11eb-9292-a48cc3cf11b8.png)|![after_signed_in](src="https://user-images.githubusercontent.com/79294818/113509944-1e89a380-9593-11eb-96a1-c1fba7f6c583.png)
+|![before_sign_in](https://user-images.githubusercontent.com/79294818/113509879-d66a8100-9592-11eb-9292-a48cc3cf11b8.png)|![after_signed_in](https://user-images.githubusercontent.com/79294818/113509944-1e89a380-9593-11eb-96a1-c1fba7f6c583.png)|
 
 ## 2ユーザー登録画面
 |新規登録|編集|
-![user_sign_up](https://user-images.githubusercontent.com/79294818/113510170-783e9d80-9594-11eb-99b8-e5fa30725933.png)｜![user_edit](https://user-images.githubusercontent.com/79294818/113510688-f8660280-9596-11eb-9b9f-9de307c6b6c8.png)
+|![user_sign_up](https://user-images.githubusercontent.com/79294818/113510170-783e9d80-9594-11eb-99b8-e5fa30725933.png)｜![user_edit](https://user-images.githubusercontent.com/79294818/113510688-f8660280-9596-11eb-9b9f-9de307c6b6c8.png)|
 
 ## 3アウトプット新規投稿画面
 |新規投稿|編集|
-![output_new](https://user-images.githubusercontent.com/79294818/113510206-b8058500-9594-11eb-84a8-ffed86e78a4e.png)|![output_edit]](https://user-images.githubusercontent.com/79294818/113510791-690d1f00-9597-11eb-88b7-fca55d9697f4.png)
+|![output_new](https://user-images.githubusercontent.com/79294818/113510206-b8058500-9594-11eb-84a8-ffed86e78a4e.png)|![output_edit](https://user-images.githubusercontent.com/79294818/113510791-690d1f00-9597-11eb-88b7-fca55d9697f4.png)|
 
 ## 4ユーザー画面
 |ユーザー一覧|ユーザー詳細|
-![all_user](https://user-images.githubusercontent.com/79294818/113510251-f438e580-9594-11eb-91f1-f56d9913aa06.png)|![user_show](https://user-images.githubusercontent.com/79294818/113510333-4ed24180-9595-11eb-8a05-b87dc7249ef2.png)
+|![all_user](https://user-images.githubusercontent.com/79294818/113510251-f438e580-9594-11eb-91f1-f56d9913aa06.png)|![user_show](https://user-images.githubusercontent.com/79294818/113510333-4ed24180-9595-11eb-8a05-b87dc7249ef2.png)|
 
 ## 5投稿詳細画面
 |投稿詳細(コメントなし)|投稿詳細(コメントあり)|
-![no_comment](https://user-images.githubusercontent.com/79294818/113510483-036c6300-9596-11eb-876e-c15d17a95116.png)|![comment](https://user-images.githubusercontent.com/79294818/113510550-6958ea80-9596-11eb-9c33-bb6cdab3e55f.png)
+|![no_comment](https://user-images.githubusercontent.com/79294818/113510483-036c6300-9596-11eb-876e-c15d17a95116.png)|![comment](https://user-images.githubusercontent.com/79294818/113510550-6958ea80-9596-11eb-9c33-bb6cdab3e55f.png)|
 
 ## 6ジャンル検索画面
 |検索前|検索後|
-![before_genre_search](https://user-images.githubusercontent.com/79294818/113510935-30ba1080-9598-11eb-8a49-76f8c89d0a6d.png)|![after_genre_search](https://user-images.githubusercontent.com/79294818/113510957-44fe0d80-9598-11eb-9eb5-85ef859cd744.png)
+|![before_genre_search](https://user-images.githubusercontent.com/79294818/113510935-30ba1080-9598-11eb-8a49-76f8c89d0a6d.png)|![after_genre_search](https://user-images.githubusercontent.com/79294818/113510957-44fe0d80-9598-11eb-9eb5-85ef859cd744.png)|
 
 
 # 利用方法
-1-1.アクセスするとトップページに遷移
-1-2.サイドバーの「新規登録」or「ログイン」をクリック
-1-3.ログインページに遷移
+| 1-1.アクセスするとトップページに遷移 |
+| 1-2.サイドバーの「新規登録」か「ログイン」をクリック |
+| 1-3.ログインページに遷移 |
 
-2-1.サイドバーの「マイページ」をクリックしマイページに遷移
-2-2.「編集」をクリックして編集ページに遷移
-2-3.情報を変更し、「編集」をクリックすると編集完了
+| 2-1.サイドバーの「マイページ」をクリックしマイページに遷移 |
+| 2-2.「編集」をクリックして編集ページに遷移 |
+| 2-3.情報を変更し、「編集」をクリックすると編集完了 |
 
-3-1.「写真のアイコン」をクリックすると投稿ページへ遷移
-3-2.情報を入力し、「投稿」をクリックすると投稿完了
+| 3-1.「写真のアイコン」をクリックすると投稿ページへ遷移 |
+| 3-2.情報を入力し、「投稿」をクリックすると投稿完了 |
 
-4-1.サイドバーの「ユーザー一覧」をクリックし、ユーザー一覧画面に遷移
-4-2.ユーザーのニックネームをクリックするとユーザー詳細画面に遷移
-4-3.「家のアイコン」をクリックし、トップページに遷移
+| 4-1.サイドバーの「ユーザー一覧」をクリックし、ユーザー一覧画面に遷移 |
+| 4-2.ユーザーのニックネームをクリックするとユーザー詳細画面に遷移 |
+| 4-3.「家のアイコン」をクリックし、トップページに遷移 |
 
-5-1.投稿してある「タイトル名」をクリックし、投稿詳細ページに遷移
-5-2.ログインしている場合のみコメントを入力して「送信」してコメント完了
+| 5-1.投稿してある「タイトル名」をクリックし、投稿詳細ページに遷移 |
+| 5-2.ログインしている場合のみコメントを入力して「送信」してコメント完了 |
 
-6-1.サイトバーのジャンル検索の下にあるボックスでジャンル指定
-6-2.ジャンル指定した後に「検索」をクリックすると検索ページに遷移
+| 6-1.サイトバーのジャンル検索の下にあるボックスでジャンル指定 |
+| 6-2.ジャンル指定した後に「検索」をクリックすると検索ページに遷移 |
 
 
 
