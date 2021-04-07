@@ -41,6 +41,7 @@
  - SQL
  - Git
  - Github
+ - AWS(EC2,S3)
 
 # 目指した課題解決
 

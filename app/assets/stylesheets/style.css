@@ -38,24 +38,24 @@ a {
 /* ヘッダー */
 
 header {
-  /*画像の表示領域が狭くなると空白できる(メディアクエリ対応のため)*/
-  background-image: url('pexels-pixabay-47730.jpg');
-  height: 70vh;
-  width: 100vw;
   background-color: #e6f0f0;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 
 .nav {
+  position: fixed;
   font-size: 50px;
-  padding: 10px 24px;
+  padding: 10px;
   color: #fff;
   text-align: center;
   background: linear-gradient(45deg, #009b9f, #9be0a7);
   border-radius: 8px;
   opacity: 0.9;
+}
+
+.header-image {
+  width: 100vw;
+  height: 600px;
+  object-fit: cover; 
 }
 
 /* メイン */
