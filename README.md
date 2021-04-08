@@ -72,8 +72,7 @@ http://35.73.179.40/
 ## 1トップ画面
 |ログイン前|ログイン後|
 |---|---|
-|![before_sign_in](https://user-images.githubusercontent.com/79294818/114002205-a0314800-9897-11eb-964d-5db659c72fd9.png)
-|![after_signed_in](https://user-images.githubusercontent.com/79294818/113509944-1e89a380-9593-11eb-96a1-c1fba7f6c583.png)|
+|![before_sign_in](https://user-images.githubusercontent.com/79294818/114010836-83007780-989f-11eb-8090-f811f4929641.png)|![after_signed_in](https://user-images.githubusercontent.com/79294818/113509944-1e89a380-9593-11eb-96a1-c1fba7f6c583.png)|
 
 ### 利用方法
  - アクセスするとトップページに遷移
