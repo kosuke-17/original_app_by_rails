@@ -8,7 +8,7 @@ class User < ApplicationRecord
   
   belongs_to :job
   has_many   :words
-  has_many   :comments
+  has_many   :comments, dependent: :destroy
   has_one_attached :user_image
 
   def self.search(search)
