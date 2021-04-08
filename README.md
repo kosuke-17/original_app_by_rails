@@ -64,7 +64,7 @@ http://35.73.179.40/
  - name: 田中太郎
  - name_kana: タナカタロウ
  - email: sample1@sample.com
- - password: aaa111
+ - password: sample1
 
 ## アプリ紹介
 
@@ -193,3 +193,6 @@ image...ActiveStorage で実装
 #使用アイコン提供元
 
 Icons made by <a href="https://fontawesome.com/icons?d=gallery&p=2" title="icons">All 7,865 Awesome Icons</a> from <a href="https://fontawesome.com/" title="fontawsome"> www.fontawsome.com</a>
+#使用画像提供元
+
+Icons made by <a href="https://www.pexels.com/ja-jp/"title="icons">無料の写真素材</a> from <a href="https://www.pexels.com/ja-jp/" title="pexels"> www.pexels.com</a>
