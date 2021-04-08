@@ -99,7 +99,12 @@ main {
   color: #999;
   text-align: right;
 }
-
+.word_fake {
+  width: 400px;
+  height: 500px;
+  margin: 0 auto;
+  object-fit: cover; 
+}
 .word__title {
   display: block;
   font-size: 20px;
