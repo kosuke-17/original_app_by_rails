@@ -50,6 +50,7 @@
  - SQL
  - Git
  - Github
+ - AWS(EC2,S3)
 
 # 目指した課題解決
 
@@ -63,13 +64,24 @@
  - 言語化した考えを記録(投稿・編集機能)
  - 考えを共有(コメント機能)
 
+# デプロイ後の URL
+
+http://35.73.179.40/
+
+# テスト用アカウント
+ - nickname: テスト
+ - name: 田中太郎
+ - name_kana: タナカタロウ
+ - email: sample1@sample.com
+ - password: sample1
+
 ## アプリ紹介
 
 
 ## 1トップ画面
 |ログイン前|ログイン後|
 |---|---|
-|![before_sign_in](https://user-images.githubusercontent.com/79294818/113509879-d66a8100-9592-11eb-9292-a48cc3cf11b8.png)|![after_signed_in](https://user-images.githubusercontent.com/79294818/113509944-1e89a380-9593-11eb-96a1-c1fba7f6c583.png)|
+|![before_sign_in](https://user-images.githubusercontent.com/79294818/114010836-83007780-989f-11eb-8090-f811f4929641.png)|![after_signed_in](https://user-images.githubusercontent.com/79294818/113509944-1e89a380-9593-11eb-96a1-c1fba7f6c583.png)|
 
 ### 利用方法
  - アクセスするとトップページに遷移
