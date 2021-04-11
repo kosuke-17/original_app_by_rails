@@ -3,11 +3,15 @@
     <%= render partial: 'word', collection: @words %>
   <% else%>
     <div class="word">
-      <%= image_tag "https://tech-master.s3.amazonaws.com/uploads/curriculums/images/Rails1-4/sample.jpg", class: "item-img" %>
-      <div class="word__body">
-        <%= link_to "タイトル", class: :word__title%>
-        <p class="word__summary">言語化フォーマット</p>
+      <div class="word-top">
+      <%= link_to "カッキー", "#", class: :word__user %>
+        <div class="word__time">
+          5日12時30分
+        </div>
       </div>
+      <%= image_tag "pexels-omar-ramadan-6507965.jpg", class: :word_fake %> 
+      <%= link_to "キック", "#", class: :word__title%>
+      <p class="word__summary">踏み込む足をきちんとボールの横におくことでボールをきちんとあてることを意識した。結果,ボールの芯に足の甲があたり勢いよくゴールに飛んでいった。</p>
     </div>
   <% end %>
 </div>
