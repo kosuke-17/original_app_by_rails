@@ -25,6 +25,7 @@ class User < ApplicationRecord
     validates :name_kana, format: { with: /\A[ァ-ヶ]+\z/, message: '全角カナ文字を使用してください' }
     validates :user_image
   end
+  validates :profile, format: { with: /\A[ぁ-んァ-ヶ一-龥々]+\z/, message: 'は全角文字のみを使用してください' }
   validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i, message: 'は6文字以上かつ英数字をそれぞれ含めてください' }
   validates :job_id, numericality: { other_than: 1 }
 end

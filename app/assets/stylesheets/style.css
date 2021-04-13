@@ -85,7 +85,6 @@ main {
 .word__user {
   font-size: 16px;
   color: #432c02;
-  
   margin-left: 20px;
 }
 
@@ -104,6 +103,9 @@ main {
   height: 500px;
   margin: 0 auto;
   object-fit: cover; 
+}
+.word__comment {
+  margin-left: 20px;
 }
 .word__title {
   display: block;

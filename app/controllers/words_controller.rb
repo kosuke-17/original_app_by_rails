@@ -2,6 +2,7 @@ class WordsController < ApplicationController
   before_action :set_word, only: [:destroy, :edit, :update, :show]
   before_action :search_product, only: [:index, :genre_search]
   before_action :move_to_index, only: [:edit, :update, :destroy]
+  
   def index
     @words = Word.includes(:user).order("created_at DESC")
   end

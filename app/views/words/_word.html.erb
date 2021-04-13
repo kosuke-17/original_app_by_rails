@@ -1,6 +1,9 @@
 <div class="word">
   <div class="word-top">
     <%= link_to "#{word.user.nickname}", "/users/#{word.user_id}", class: :word__user %>
+    <div class="word__comment">
+      <i class="far fa-comment fa-lg"><%= link_to word.comments.length, word_path(word.id) %></i>
+    </div>
     <div class="word__time">
       <%= word.created_at.strftime('%-d日%-H時%-M分') %>
     </div>
