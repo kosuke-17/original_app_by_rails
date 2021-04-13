@@ -29,7 +29,6 @@
           <%= f.collection_select(:job_id, Job.all, :id, :name, {}, {class:"select-box", id:"user_job_id"}) %>
         </div>
         <div class="field">
-          <i class="far fa-image fa-2x"></i>
           <%= f.label :user_image, "~アカウントの画像~" %><br />
           <%= f.file_field :user_image, id:"user_image" %>
         </div>
